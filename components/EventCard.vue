@@ -1,5 +1,5 @@
  <template>
-     <div>
+     <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8">
            <article v-for="event in events" :key="event.id" class="bg-white group relative rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transform duration-200">
                     <div class="relative w-full h-80 md:h-64 lg:h-44">
                         <img :src="event.image.name"
