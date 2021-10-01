@@ -11,11 +11,10 @@
     </section>
 </div>
 
-
 </template>
 
 <script>
-import { eventQuery } from "../graphql/query";
+import { allEventQuery } from "../graphql/query";
 export default {
   data() {
     return {
@@ -25,7 +24,10 @@ export default {
   apollo: {
     events: {
       prefetch: true,
-      query: eventQuery,
+      query: allEventQuery,
+            variables () {
+        return { id: parseInt(this.$route.params.id) }
+      }
     }
   },
 }

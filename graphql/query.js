@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export const eventQuery = gql`
+export const allEventQuery = gql`
 query Events {
     events {
       id
@@ -14,4 +14,17 @@ query Events {
       }
     }
   }  
+`
+export const eventQuery = gql`
+query event($id: ID!) {
+  event(id: $id) {
+    id
+    title
+    date
+    description
+    image {
+      name
+    }
+  }
+}
 `
